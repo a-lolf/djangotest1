@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
+
+
+from shopping.apps.cart_page import apps
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cart_page/', include('apps.cart_page.urls')),
 ]
